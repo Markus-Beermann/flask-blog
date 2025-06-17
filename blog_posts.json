@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "author": "John Doe",
+        "title": "First Post",
+        "content": "This is my first changed post. Lovely\r\n",
+        "likes": 0
+    },
+    {
+        "id": 2,
+        "author": "Jane Doe",
+        "title": "Second Post",
+        "content": "This is another post.",
+        "likes": 0
+    },
+    {
+        "id": 3,
+        "author": "Tomer",
+        "title": "The Chuck Norris under the Grade",
+        "content": "Markus well done:)\r\n",
+        "likes": 0
+    }
+]
