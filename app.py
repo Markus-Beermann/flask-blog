@@ -7,10 +7,12 @@ app = Flask(__name__)
 DATA_FILE = 'blog_posts.json'
 
 def load_posts():
+    \"\"\"Load blog posts from the JSON file.\"\"\"
     if not os.path.exists(DATA_FILE):
         return []
     with open(DATA_FILE, 'r') as file:
         return json.load(file)
+
 
 def save_posts(posts):
     with open(DATA_FILE, 'w') as file:
@@ -45,8 +47,9 @@ def add():
         return redirect(url_for('index'))
     return render_template('add.html')
 
-@app.route('/delete/<int:post_id>')
+@app.route('/delete/<int:post_id>', methods=['POST'])
 def delete(post_id):
+    \"\"\"Delete a blog post by ID.\"\"\"
     posts = load_posts()
     posts = [post for post in posts if post['id'] != post_id]
     save_posts(posts)
@@ -69,8 +72,9 @@ def update(post_id):
         return redirect(url_for('index'))
     return render_template('update.html', post=post)
 
-@app.route('/like/<int:post_id>')
+@app.route('/like/<int:post_id>', methods=['POST'])
 def like(post_id):
+    \"\"\"Increment the like counter for a blog post.\"\"\"
     posts = load_posts()
     for post in posts:
         if post['id'] == post_id:
