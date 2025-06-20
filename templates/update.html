@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Update Post</title>
 </head>
 <body>
@@ -11,7 +12,7 @@
         <label for="title">Title:</label><br>
         <input type="text" id="title" name="title" value="{{ post.title }}"><br>
         <label for="content">Content:</label><br>
-        <textarea id="content" name="content">{{ post.content }}</textarea><br>
+        <textarea id="content" name="content" required>{{ post.content }}</textarea><br>
         <input type="submit" value="Update">
     </form>
 </body>
